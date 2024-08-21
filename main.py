@@ -22,6 +22,12 @@ from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 
 embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-en-v1.5")
 
+
+from llama_index.core import Settings
+
+Settings.llm = llm
+Settings.embed_model = embed_model
+
 # response = ollama.chat(model=MODEL, messages=[
 #   {
 #     'role': 'user',
@@ -34,7 +40,7 @@ embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-en-v1.5")
 # )
 
 # print(response['message']['content'])
-print(ollama.list())
+# print(ollama.list())
 
 # llamaindex with ollama docs:
 # https://docs.llamaindex.ai/en/stable/examples/llm/ollama/
